@@ -41,3 +41,53 @@ quartiles(x)
 ```
 
 As we can see, the quartiles function is working properly because the firstquartile, third quartile, and interquartile range match with the ones found in question 1.
+
+**Question 3**
+
+```{r}
+Tukey.below <- quantile(x, 0.25) - 1.5 * IQR.x
+Tukey.above <- quantile(x, 0.75) + 1.5 * IQR.x
+# This is storing the numbers that any number from the data must be 
+# above or below in order to qualify as an outlier
+
+(x < Tukey.below) == TRUE
+(x > Tukey.above) == TRUE 
+# This is checking to see if there are any numbers in the data that meet this criteria
+
+x[(x > Tukey.above) == TRUE]
+# This is printing the number that is makiing the boolean true (aka the outlier)
+```
+
+According to Tukey's rule, 28.7 is considered an outlier.
+
+**Question 4**
+
+```{r}
+#' Determine whether there is an outlier in a set of data.
+#'
+#' @param sa is a vector containing a sample
+#'
+#' @return A boolean vector that returns TRUE for and outlier and FALSE otherwise.
+tukey.outlier <- function(sa) {
+  sa.quart <- quartiles(sa)
+  (((x < sa.quart[[1]]-1.5*sa.quart[[3]]) == TRUE) | ((x > sa.quart[[2]]+1.5*sa.quart[[3]])))
+}
+
+tukey.outlier(x)
+```
+
+This is the same result we got for question 3, therefore the functin is working properly.
+
+**Question 5**
+
+```{r}
+#' Determine whether a function correctly computes whether or not there
+#' is an outlier in a set of data.
+#'
+#' @param fun is a function that tests for outliers
+#'
+#' @return A boolean vector that returns TRUE if the function correctly 
+#' identifies the outliers and FALSE otherwise.
+
+```
+
