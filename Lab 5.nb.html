@@ -1749,10 +1749,60 @@ summary {
 
 
 <!-- rnb-text-begin -->
-<p>hi</p>
+<p><strong>Question 0:</strong></p>
+<p><a href="https://github.com/s1173652/Lab-5" class="uri">https://github.com/s1173652/Lab-5</a></p>
+<p><strong>Question 1</strong></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA8LWMoMi4yLCA3LjgsIC00LjQsIDAuMCwgLTEuMiwgMy45LCA0LjksIC01LjcsIC03LjksIC00LjksIDI4LjcsIDQuOSlcbiNUaGlzIGlzIHN0b3JpbmcgdGhlIGRhdGEgaW4geFxuXG5xdWFudGlsZShzb3J0KHgpKVxuYGBgIn0= -->
+<pre class="r"><code>x &lt;-c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
+#This is storing the data in x
+
+quantile(sort(x))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgIDAlICAgIDI1JSAgICA1MCUgICAgNzUlICAgMTAwJSBcbi03LjkwMCAtNC41MjUgIDEuMTAwICA0LjkwMCAyOC43MDAgXG4ifQ== -->
+<pre><code>    0%    25%    50%    75%   100% 
+-7.900 -4.525  1.100  4.900 28.700 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBUaGlzIGlzIGZpbmRpbmcgdGhlIHF1YXJ0aWxlcyBvZiB0aGUgZGF0YSBhZnRlciBpdFxuIyBoYXMgYmVlbiBzb3J0ZWRcblxuSVFSLnggPC0gcXVhbnRpbGUoeCwgMC43NSkgLSBxdWFudGlsZSh4LCAwLjI1KVxuIyBUaGlzIGlzIHNhdmluZyB0aGUgSVFSIHRvIElRUi54XG4jIFRoaXMgaXMgc3VidHJhY3RpbmcgUTEgZnJvbSBRMyB0byBnZXQgdGhlIElRUlxuYGBgIn0= -->
+<pre class="r"><code># This is finding the quartiles of the data after it
+# has been sorted
+
+IQR.x &lt;- quantile(x, 0.75) - quantile(x, 0.25)
+# This is saving the IQR to IQR.x
+# This is subtracting Q1 from Q3 to get the IQR</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p><strong>Question 2</strong></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIycgUHJpbnQgdGhlIGZpcnN0IHF1YXJ0aWxlLCB0aGlyZCBxdWFydGlsZSwgYW5kIGludGVycXVhcnRpbGUgcmFuZ2Ugb2Ygc2FtcGxlIGRhdGEuXG4jJ1xuIycgQHBhcmFtIHNhIGlzIGEgdmVjdG9yIGNvbnRhaW5pbmcgYSBzYW1wbGVcbiMnXG4jJyBAcmV0dXJuIEEgdmVjdG9yIG9mIHRoZSBmaXJzdCBxdWFydGlsZSwgdGhpcmQgcXVhcnRpbGUsIGFuZCBpbnRlcnF1YXJ0aWxlIHJhbmdlLiBcbnF1YXJ0aWxlcyA8LSBmdW5jdGlvbihzYSl7XG4gIHF1YXJ0LmRhdGEgPC0gYyhxdWFudGlsZShzYSwgMC4yNSksIHF1YW50aWxlKHNhLCAwLjc1KSwgKHF1YW50aWxlKHNhLCAwLjc1KS1xdWFudGlsZShzYSwgMC4yNSkpKVxuICBwcmludChxdWFydC5kYXRhKVxufVxuXG5xdWFydGlsZXMoeClcbmBgYCJ9 -->
+<pre class="r"><code>#' Print the first quartile, third quartile, and interquartile range of sample data.
+#'
+#' @param sa is a vector containing a sample
+#'
+#' @return A vector of the first quartile, third quartile, and interquartile range. 
+quartiles &lt;- function(sa){
+  quart.data &lt;- c(quantile(sa, 0.25), quantile(sa, 0.75), (quantile(sa, 0.75)-quantile(sa, 0.25)))
+  print(quart.data)
+}
+
+quartiles(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgMjUlICAgIDc1JSAgICA3NSUgXG4tNC41MjUgIDQuOTAwICA5LjQyNSBcbiJ9 -->
+<pre><code>   25%    75%    75% 
+-4.525  4.900  9.425 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBUaGlzIGlzIHRvIHRlc3QgYW5kIG1ha2Ugc3VyZSB0aGF0IHRoZSBmdW5jdGlvbiBpcyBydW5uaW5nIHByb3Blcmx5LlxuYGBgIn0= -->
+<pre class="r"><code># This is to test and make sure that the function is running properly.</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>As we can see, the quartiles function is working properly because the firstquartile, third quartile, and interquartile range match with the ones found in question 1.</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTGFiIDUiCmF1dGhvcnM6IEJyaSBDaXJpbGxvICYgUm9iIEdvbGViaWVza2kKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKaGkg</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTGFiIDUiCmF1dGhvcnM6IEJyaSBDaXJpbGxvICYgUm9iIEdvbGViaWVza2kKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKKipRdWVzdGlvbiAwOioqCgpodHRwczovL2dpdGh1Yi5jb20vczExNzM2NTIvTGFiLTUKCioqUXVlc3Rpb24gMSoqCgpgYGB7cn0KeCA8LWMoMi4yLCA3LjgsIC00LjQsIDAuMCwgLTEuMiwgMy45LCA0LjksIC01LjcsIC03LjksIC00LjksIDI4LjcsIDQuOSkKI1RoaXMgaXMgc3RvcmluZyB0aGUgZGF0YSBpbiB4CgpxdWFudGlsZShzb3J0KHgpKQojIFRoaXMgaXMgZmluZGluZyB0aGUgcXVhcnRpbGVzIG9mIHRoZSBkYXRhIGFmdGVyIGl0CiMgaGFzIGJlZW4gc29ydGVkCgpJUVIueCA8LSBxdWFudGlsZSh4LCAwLjc1KSAtIHF1YW50aWxlKHgsIDAuMjUpCiMgVGhpcyBpcyBzYXZpbmcgdGhlIElRUiB0byBJUVIueAojIFRoaXMgaXMgc3VidHJhY3RpbmcgUTEgZnJvbSBRMyB0byBnZXQgdGhlIElRUgpgYGAKCioqUXVlc3Rpb24gMioqCgpgYGB7cn0KIycgUHJpbnQgdGhlIGZpcnN0IHF1YXJ0aWxlLCB0aGlyZCBxdWFydGlsZSwgYW5kIGludGVycXVhcnRpbGUgcmFuZ2Ugb2Ygc2FtcGxlIGRhdGEuCiMnCiMnIEBwYXJhbSBzYSBpcyBhIHZlY3RvciBjb250YWluaW5nIGEgc2FtcGxlCiMnCiMnIEByZXR1cm4gQSB2ZWN0b3Igb2YgdGhlIGZpcnN0IHF1YXJ0aWxlLCB0aGlyZCBxdWFydGlsZSwgYW5kIGludGVycXVhcnRpbGUgcmFuZ2UuIApxdWFydGlsZXMgPC0gZnVuY3Rpb24oc2EpewogIHF1YXJ0LmRhdGEgPC0gYyhxdWFudGlsZShzYSwgMC4yNSksIHF1YW50aWxlKHNhLCAwLjc1KSwgKHF1YW50aWxlKHNhLCAwLjc1KS1xdWFudGlsZShzYSwgMC4yNSkpKQogIHByaW50KHF1YXJ0LmRhdGEpCn0KCnF1YXJ0aWxlcyh4KQojIFRoaXMgaXMgdG8gdGVzdCBhbmQgbWFrZSBzdXJlIHRoYXQgdGhlIGZ1bmN0aW9uIGlzIHJ1bm5pbmcgcHJvcGVybHkuCmBgYAoKQXMgd2UgY2FuIHNlZSwgdGhlIHF1YXJ0aWxlcyBmdW5jdGlvbiBpcyB3b3JraW5nIHByb3Blcmx5IGJlY2F1c2UgdGhlIGZpcnN0cXVhcnRpbGUsIHRoaXJkIHF1YXJ0aWxlLCBhbmQgaW50ZXJxdWFydGlsZSByYW5nZSBtYXRjaCB3aXRoIHRoZSBvbmVzIGZvdW5kIGluIHF1ZXN0aW9uIDEuCg==</div>
 
 
 

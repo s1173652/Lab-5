@@ -4,4 +4,40 @@ authors: Bri Cirillo & Rob Golebieski
 output: html_notebook
 ---
 
-hi 
+**Question 0:**
+
+https://github.com/s1173652/Lab-5
+
+**Question 1**
+
+```{r}
+x <-c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
+#This is storing the data in x
+
+quantile(sort(x))
+# This is finding the quartiles of the data after it
+# has been sorted
+
+IQR.x <- quantile(x, 0.75) - quantile(x, 0.25)
+# This is saving the IQR to IQR.x
+# This is subtracting Q1 from Q3 to get the IQR
+```
+
+**Question 2**
+
+```{r}
+#' Print the first quartile, third quartile, and interquartile range of sample data.
+#'
+#' @param sa is a vector containing a sample
+#'
+#' @return A vector of the first quartile, third quartile, and interquartile range. 
+quartiles <- function(sa){
+  quart.data <- c(quantile(sa, 0.25), quantile(sa, 0.75), (quantile(sa, 0.75)-quantile(sa, 0.25)))
+  print(quart.data)
+}
+
+quartiles(x)
+# This is to test and make sure that the function is running properly.
+```
+
+As we can see, the quartiles function is working properly because the firstquartile, third quartile, and interquartile range match with the ones found in question 1.
