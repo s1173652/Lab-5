@@ -4,4 +4,164 @@ authors: Bri Cirillo & Rob Golebieski
 output: html_notebook
 ---
 
-hi 
+**Question 0:**
+
+https://github.com/s1173652/Lab-5
+
+**Question 1**
+
+```{r}
+x <-c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
+#This is storing the data in x
+
+quantile(sort(x))
+# This is finding the quartiles of the data after it
+# has been sorted
+
+IQR.x <- quantile(x, 0.75) - quantile(x, 0.25)
+# This is saving the IQR to IQR.x
+# This is subtracting Q1 from Q3 to get the IQR
+```
+
+**Question 2**
+
+```{r}
+#' Print the first quartile, third quartile, and interquartile range of sample data.
+#'
+#' @param sa is a vector containing a sample
+#'
+#' @return A vector of the first quartile, third quartile, and interquartile range. 
+quartiles <- function(sa){
+  quart.data <- c(quantile(sa, 0.25), quantile(sa, 0.75), (quantile(sa, 0.75)-quantile(sa, 0.25)))
+  print(quart.data)
+}
+
+quartiles(x)
+# This is to test and make sure that the function is running properly.
+```
+
+As we can see, the quartiles function is working properly because the firstquartile, third quartile, and interquartile range match with the ones found in question 1.
+
+**Question 3**
+
+```{r}
+Tukey.below <- quantile(x, 0.25) - 1.5 * IQR.x
+Tukey.above <- quantile(x, 0.75) + 1.5 * IQR.x
+# This is storing the numbers that any number from the data must be 
+# above or below in order to qualify as an outlier
+
+(x < Tukey.below) == TRUE
+(x > Tukey.above) == TRUE 
+# This is checking to see if there are any numbers in the data that meet this criteria
+
+x[(x > Tukey.above) == TRUE]
+# This is printing the number that is makiing the boolean true (aka the outlier)
+```
+
+According to Tukey's rule, 28.7 is considered an outlier.
+
+**Question 4**
+
+```{r}
+#' Determine whether there is an outlier in a set of data.
+#'
+#' @param sa is a vector containing a sample
+#'
+#' @return A boolean vector that returns TRUE for and outlier and FALSE otherwise.
+tukey.outlier <- function(sa) {
+  sa.quart <- quartiles(sa)
+  (((x < sa.quart[[1]]-1.5*sa.quart[[3]]) == TRUE) | ((x > sa.quart[[2]]+1.5*sa.quart[[3]])))
+}
+
+tukey.outlier(x)
+```
+
+This is the same result we got for question 3, therefore the function is working properly.
+
+**Question 5**
+
+```{r}
+#' Determine whether a function correctly computes whether or not there
+#' is an outlier in a set of data.
+#'
+#' @param fun is a function that tests for outliers
+#'
+#' @return A boolean vector that returns TRUE if the function correctly 
+#' identifies the outliers and FALSE otherwise.
+test.tukey.outlier <- function(fun = tukey.outlier){
+  results <- c(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE)
+  
+  x <-c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
+  
+  if (sum(fun(x) == results) == 12){
+    return(TRUE)
+  }else{
+    return(FALSE)
+  }
+}
+  
+test.tukey.outlier()
+```
+
+We have tested to see if the function we wrote previously is correctly identifying outliers. 
+
+**Question 6**
+
+```{r}
+quantile(sort(-x))
+# This is finding the quartiles of the data after it
+# has been sorted
+
+IQR.x1 <- quantile(-x, 0.75) - quantile(-x, 0.25)
+# This is saving the IQR to IQR.x
+# This is subtracting Q1 from Q3 to get the IQR
+
+Tukey.below <- quantile(-x, 0.25) - 1.5 * IQR.x1
+Tukey.above <- quantile(-x, 0.75) + 1.5 * IQR.x1
+# This is storing the numbers that any number from the data must be 
+# above or below in order to qualify as an outlier
+
+(-x < Tukey.below) == TRUE
+(-x > Tukey.above) == TRUE 
+# This is checking to see if there are any numbers in the data that meet this criteria
+
+-x[(-x > Tukey.above) == TRUE]
+# This is printing the number that is makiing the boolean true (aka the outlier)
+
+-x 
+# This is just printing out what -x would look like
+
+tukey.outlier(-x)
+# This is finding the outlier in the set of -x
+```
+
+The 12th value which is -28.7 should be an outlier in the data because it is far below what Tukey's rule is. We can see this by doing it by hand and by using the function tukey.outlier.
+
+**Question 7**
+
+```{r}
+#' Determine whether a function correctly computes whether or not there
+#' is an outlier in a set of data.
+#'
+#' @param fun is a function that tests for outliers
+#'
+#' @return A boolean vector that returns TRUE if the function correctly 
+#' identifies the outliers and FALSE otherwise.
+test.tukey.outlier.1 <- function(fun = tukey.outlier){
+  results <- c(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE)
+  
+  x <-c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
+  
+  if (sum(fun(-x) == results) == 12){
+    return(TRUE)
+  }else{
+    return(FALSE)
+  }
+}
+
+test.tukey.outlier.1()
+```
+
+We can see that this is correct by the work shown in the last question.
+
+
