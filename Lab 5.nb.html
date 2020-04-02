@@ -1778,11 +1778,11 @@ IQR.x &lt;- quantile(x, 0.75) - quantile(x, 0.25)
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIycgUHJpbnQgdGhlIGZpcnN0IHF1YXJ0aWxlLCB0aGlyZCBxdWFydGlsZSwgYW5kIGludGVycXVhcnRpbGUgcmFuZ2Ugb2Ygc2FtcGxlIGRhdGEuXG4jJ1xuIycgQHBhcmFtIHNhIGlzIGEgdmVjdG9yIGNvbnRhaW5pbmcgYSBzYW1wbGVcbiMnXG4jJyBAcmV0dXJuIEEgdmVjdG9yIG9mIHRoZSBmaXJzdCBxdWFydGlsZSwgdGhpcmQgcXVhcnRpbGUsIGFuZCBpbnRlcnF1YXJ0aWxlIHJhbmdlLiBcbnF1YXJ0aWxlcyA8LSBmdW5jdGlvbihzYSl7XG4gIHF1YXJ0LmRhdGEgPC0gYyhxdWFudGlsZShzYSwgMC4yNSksIHF1YW50aWxlKHNhLCAwLjc1KSwgKHF1YW50aWxlKHNhLCAwLjc1KS1xdWFudGlsZShzYSwgMC4yNSkpKVxuICBwcmludChxdWFydC5kYXRhKVxufVxuXG5xdWFydGlsZXMoeClcbmBgYCJ9 -->
-<pre class="r"><code>#' Print the first quartile, third quartile, and interquartile range of sample data.
-#'
-#' @param sa is a vector containing a sample
-#'
-#' @return A vector of the first quartile, third quartile, and interquartile range. 
+<pre class="r"><code>#&#39; Print the first quartile, third quartile, and interquartile range of sample data.
+#&#39;
+#&#39; @param sa is a vector containing a sample
+#&#39;
+#&#39; @return A vector of the first quartile, third quartile, and interquartile range. 
 quartiles &lt;- function(sa){
   quart.data &lt;- c(quantile(sa, 0.25), quantile(sa, 0.75), (quantile(sa, 0.75)-quantile(sa, 0.25)))
   print(quart.data)
@@ -1811,16 +1811,14 @@ Tukey.above &lt;- quantile(x, 0.75) + 1.5 * IQR.x
 
 (x &lt; Tukey.below) == TRUE</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuIFs4XSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuIn0= -->
-<pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE
- [8] FALSE FALSE FALSE FALSE FALSE</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuIn0= -->
+<pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKHggPiBUdWtleS5hYm92ZSkgPT0gVFJVRSBcbmBgYCJ9 -->
 <pre class="r"><code>(x &gt; Tukey.above) == TRUE </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuIFs4XSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRVxuIn0= -->
-<pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE
- [8] FALSE FALSE FALSE  TRUE FALSE</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRVxuIn0= -->
+<pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBUaGlzIGlzIGNoZWNraW5nIHRvIHNlZSBpZiB0aGVyZSBhcmUgYW55IG51bWJlcnMgaW4gdGhlIGRhdGEgdGhhdCBtZWV0IHRoaXMgY3JpdGVyaWFcblxueFsoeCA+IFR1a2V5LmFib3ZlKSA9PSBUUlVFXVxuYGBgIn0= -->
 <pre class="r"><code># This is checking to see if there are any numbers in the data that meet this criteria
@@ -1840,11 +1838,11 @@ x[(x &gt; Tukey.above) == TRUE]</code></pre>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIycgRGV0ZXJtaW5lIHdoZXRoZXIgdGhlcmUgaXMgYW4gb3V0bGllciBpbiBhIHNldCBvZiBkYXRhLlxuIydcbiMnIEBwYXJhbSBzYSBpcyBhIHZlY3RvciBjb250YWluaW5nIGEgc2FtcGxlXG4jJ1xuIycgQHJldHVybiBBIGJvb2xlYW4gdmVjdG9yIHRoYXQgcmV0dXJucyBUUlVFIGZvciBhbmQgb3V0bGllciBhbmQgRkFMU0Ugb3RoZXJ3aXNlLlxudHVrZXkub3V0bGllciA8LSBmdW5jdGlvbihzYSkge1xuICBzYS5xdWFydCA8LSBxdWFydGlsZXMoc2EpXG4gICgoKHggPCBzYS5xdWFydFtbMV1dLTEuNSpzYS5xdWFydFtbM11dKSA9PSBUUlVFKSB8ICgoeCA+IHNhLnF1YXJ0W1syXV0rMS41KnNhLnF1YXJ0W1szXV0pKSlcbn1cblxudHVrZXkub3V0bGllcih4KVxuYGBgIn0= -->
-<pre class="r"><code>#' Determine whether there is an outlier in a set of data.
-#'
-#' @param sa is a vector containing a sample
-#'
-#' @return A boolean vector that returns TRUE for and outlier and FALSE otherwise.
+<pre class="r"><code>#&#39; Determine whether there is an outlier in a set of data.
+#&#39;
+#&#39; @param sa is a vector containing a sample
+#&#39;
+#&#39; @return A boolean vector that returns TRUE for and outlier and FALSE otherwise.
 tukey.outlier &lt;- function(sa) {
   sa.quart &lt;- quartiles(sa)
   (((x &lt; sa.quart[[1]]-1.5*sa.quart[[3]]) == TRUE) | ((x &gt; sa.quart[[2]]+1.5*sa.quart[[3]])))
@@ -1852,11 +1850,10 @@ tukey.outlier &lt;- function(sa) {
 
 tukey.outlier(x)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgMjUlICAgIDc1JSAgICA3NSUgXG4tNC41MjUgIDQuOTAwICA5LjQyNSBcbiBbMV0gRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0VcbiBbOF0gRkFMU0UgRkFMU0UgRkFMU0UgIFRSVUUgRkFMU0VcbiJ9 -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgMjUlICAgIDc1JSAgICA3NSUgXG4tNC41MjUgIDQuOTAwICA5LjQyNSBcbiBbMV0gRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgIFRSVUUgRkFMU0VcbiJ9 -->
 <pre><code>   25%    75%    75% 
 -4.525  4.900  9.425 
- [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE
- [8] FALSE FALSE FALSE  TRUE FALSE</code></pre>
+ [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1865,13 +1862,13 @@ tukey.outlier(x)</code></pre>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIycgRGV0ZXJtaW5lIHdoZXRoZXIgYSBmdW5jdGlvbiBjb3JyZWN0bHkgY29tcHV0ZXMgd2hldGhlciBvciBub3QgdGhlcmVcbiMnIGlzIGFuIG91dGxpZXIgaW4gYSBzZXQgb2YgZGF0YS5cbiMnXG4jJyBAcGFyYW0gZnVuIGlzIGEgZnVuY3Rpb24gdGhhdCB0ZXN0cyBmb3Igb3V0bGllcnNcbiMnXG4jJyBAcmV0dXJuIEEgYm9vbGVhbiB2ZWN0b3IgdGhhdCByZXR1cm5zIFRSVUUgaWYgdGhlIGZ1bmN0aW9uIGNvcnJlY3RseSBcbiMnIGlkZW50aWZpZXMgdGhlIG91dGxpZXJzIGFuZCBGQUxTRSBvdGhlcndpc2UuXG50ZXN0LnR1a2V5Lm91dGxpZXIgPC0gZnVuY3Rpb24oZnVuID0gdHVrZXkub3V0bGllcil7XG4gIHJlc3VsdHMgPC0gYyhGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgVFJVRSwgRkFMU0UpXG4gIFxuICB4IDwtYygyLjIsIDcuOCwgLTQuNCwgMC4wLCAtMS4yLCAzLjksIDQuOSwgLTUuNywgLTcuOSwgLTQuOSwgMjguNywgNC45KVxuICBcbiAgaWYgKHN1bShmdW4oeCkgPT0gcmVzdWx0cykgPT0gMTIpe1xuICAgIHJldHVybihUUlVFKVxuICB9ZWxzZXtcbiAgICByZXR1cm4oRkFMU0UpXG4gIH1cbn1cbiAgXG50ZXN0LnR1a2V5Lm91dGxpZXIoKVxuYGBgIn0= -->
-<pre class="r"><code>#' Determine whether a function correctly computes whether or not there
-#' is an outlier in a set of data.
-#'
-#' @param fun is a function that tests for outliers
-#'
-#' @return A boolean vector that returns TRUE if the function correctly 
-#' identifies the outliers and FALSE otherwise.
+<pre class="r"><code>#&#39; Determine whether a function correctly computes whether or not there
+#&#39; is an outlier in a set of data.
+#&#39;
+#&#39; @param fun is a function that tests for outliers
+#&#39;
+#&#39; @return A boolean vector that returns TRUE if the function correctly 
+#&#39; identifies the outliers and FALSE otherwise.
 test.tukey.outlier &lt;- function(fun = tukey.outlier){
   results &lt;- c(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE)
   
@@ -1919,16 +1916,14 @@ Tukey.above &lt;- quantile(-x, 0.75) + 1.5 * IQR.x1
 
 (-x &lt; Tukey.below) == TRUE</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuIFs4XSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRVxuIn0= -->
-<pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE
- [8] FALSE FALSE FALSE  TRUE FALSE</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRVxuIn0= -->
+<pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKC14ID4gVHVrZXkuYWJvdmUpID09IFRSVUUgXG5gYGAifQ== -->
 <pre class="r"><code>(-x &gt; Tukey.above) == TRUE </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuIFs4XSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuIn0= -->
-<pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE
- [8] FALSE FALSE FALSE FALSE FALSE</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuIn0= -->
+<pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBUaGlzIGlzIGNoZWNraW5nIHRvIHNlZSBpZiB0aGVyZSBhcmUgYW55IG51bWJlcnMgaW4gdGhlIGRhdGEgdGhhdCBtZWV0IHRoaXMgY3JpdGVyaWFcblxuLXhbKC14ID4gVHVrZXkuYWJvdmUpID09IFRSVUVdXG5gYGAifQ== -->
 <pre class="r"><code># This is checking to see if there are any numbers in the data that meet this criteria
@@ -1938,24 +1933,23 @@ Tukey.above &lt;- quantile(-x, 0.75) + 1.5 * IQR.x1
 <!-- rnb-output-begin eyJkYXRhIjoibnVtZXJpYygwKVxuIn0= -->
 <pre><code>numeric(0)</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBUaGlzIGlzIHByaW50aW5nIHRoZSBudW1iZXIgdGhhdCBpcyBtYWtpaW5nIHRoZSBib29sZWFuIHRydWUgKGFrYSB0aGUgb3V0bGllcilcbi14IFxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBUaGlzIGlzIHByaW50aW5nIHRoZSBudW1iZXIgdGhhdCBpcyBtYWtpaW5nIHRoZSBib29sZWFuIHRydWUgKGFrYSB0aGUgb3V0bGllcilcblxuLXggXG5gYGAifQ== -->
 <pre class="r"><code># This is printing the number that is makiing the boolean true (aka the outlier)
+
 -x </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgLTIuMiAgLTcuOCAgIDQuNCAgIDAuMCAgIDEuMiAgLTMuOSAgLTQuOVxuIFs4XSAgIDUuNyAgIDcuOSAgIDQuOSAtMjguNyAgLTQuOVxuIn0= -->
-<pre><code> [1]  -2.2  -7.8   4.4   0.0   1.2  -3.9  -4.9
- [8]   5.7   7.9   4.9 -28.7  -4.9</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgLTIuMiAgLTcuOCAgIDQuNCAgIDAuMCAgIDEuMiAgLTMuOSAgLTQuOSAgIDUuNyAgIDcuOSAgIDQuOSAtMjguNyAgLTQuOVxuIn0= -->
+<pre><code> [1]  -2.2  -7.8   4.4   0.0   1.2  -3.9  -4.9   5.7   7.9   4.9 -28.7  -4.9</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBUaGlzIGlzIGp1c3QgcHJpbnRpbmcgb3V0IHdoYXQgLXggd291bGQgbG9vayBsaWtlXG5cbnR1a2V5Lm91dGxpZXIoLXgpXG5gYGAifQ== -->
 <pre class="r"><code># This is just printing out what -x would look like
 
 tukey.outlier(-x)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgMjUlICAgIDc1JSAgICA3NSUgXG4tNC45MDAgIDQuNTI1ICA5LjQyNSBcbiBbMV0gRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0VcbiBbOF0gRkFMU0UgRkFMU0UgRkFMU0UgIFRSVUUgRkFMU0VcbiJ9 -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgMjUlICAgIDc1JSAgICA3NSUgXG4tNC45MDAgIDQuNTI1ICA5LjQyNSBcbiBbMV0gRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgRkFMU0UgIFRSVUUgRkFMU0VcbiJ9 -->
 <pre><code>   25%    75%    75% 
 -4.900  4.525  9.425 
- [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE
- [8] FALSE FALSE FALSE  TRUE FALSE</code></pre>
+ [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBUaGlzIGlzIGZpbmRpbmcgdGhlIG91dGxpZXIgaW4gdGhlIHNldCBvZiAteFxuYGBgIn0= -->
 <pre class="r"><code># This is finding the outlier in the set of -x</code></pre>
@@ -1967,13 +1961,13 @@ tukey.outlier(-x)</code></pre>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIycgRGV0ZXJtaW5lIHdoZXRoZXIgYSBmdW5jdGlvbiBjb3JyZWN0bHkgY29tcHV0ZXMgd2hldGhlciBvciBub3QgdGhlcmVcbiMnIGlzIGFuIG91dGxpZXIgaW4gYSBzZXQgb2YgZGF0YS5cbiMnXG4jJyBAcGFyYW0gZnVuIGlzIGEgZnVuY3Rpb24gdGhhdCB0ZXN0cyBmb3Igb3V0bGllcnNcbiMnXG4jJyBAcmV0dXJuIEEgYm9vbGVhbiB2ZWN0b3IgdGhhdCByZXR1cm5zIFRSVUUgaWYgdGhlIGZ1bmN0aW9uIGNvcnJlY3RseSBcbiMnIGlkZW50aWZpZXMgdGhlIG91dGxpZXJzIGFuZCBGQUxTRSBvdGhlcndpc2UuXG50ZXN0LnR1a2V5Lm91dGxpZXIuMSA8LSBmdW5jdGlvbihmdW4gPSB0dWtleS5vdXRsaWVyKXtcbiAgcmVzdWx0cyA8LSBjKEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBUUlVFLCBGQUxTRSlcbiAgXG4gIHggPC1jKDIuMiwgNy44LCAtNC40LCAwLjAsIC0xLjIsIDMuOSwgNC45LCAtNS43LCAtNy45LCAtNC45LCAyOC43LCA0LjkpXG4gIFxuICBpZiAoc3VtKGZ1bigteCkgPT0gcmVzdWx0cykgPT0gMTIpe1xuICAgIHJldHVybihUUlVFKVxuICB9ZWxzZXtcbiAgICByZXR1cm4oRkFMU0UpXG4gIH1cbn1cblxudGVzdC50dWtleS5vdXRsaWVyLjEoKVxuYGBgIn0= -->
-<pre class="r"><code>#' Determine whether a function correctly computes whether or not there
-#' is an outlier in a set of data.
-#'
-#' @param fun is a function that tests for outliers
-#'
-#' @return A boolean vector that returns TRUE if the function correctly 
-#' identifies the outliers and FALSE otherwise.
+<pre class="r"><code>#&#39; Determine whether a function correctly computes whether or not there
+#&#39; is an outlier in a set of data.
+#&#39;
+#&#39; @param fun is a function that tests for outliers
+#&#39;
+#&#39; @return A boolean vector that returns TRUE if the function correctly 
+#&#39; identifies the outliers and FALSE otherwise.
 test.tukey.outlier.1 &lt;- function(fun = tukey.outlier){
   results &lt;- c(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE)
   
@@ -1996,9 +1990,39 @@ test.tukey.outlier.1()</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>We can see that this is correct by the work shown in the last question.</p>
+<div id="problem-8" class="section level1">
+<h1>Problem 8</h1>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdC50dWtleS5vdXRsaWVyLjEoZnVuPXR1a2V5Lm91dGxpZXIpXG5gYGAifQ== -->
+<pre class="r"><code>test.tukey.outlier.1(fun=tukey.outlier)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgMjUlICAgIDc1JSAgICA3NSUgXG4tNC45MDAgIDQuNTI1ICA5LjQyNSBcblsxXSBUUlVFXG4ifQ== -->
+<pre><code>   25%    75%    75% 
+-4.900  4.525  9.425 
+[1] TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="problem-9" class="section level1">
+<h1>Problem 9</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMC4xKnhcbmBgYCJ9 -->
+<pre class="r"><code>0.1*x</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMC4yMiAgMC43OCAtMC40NCAgMC4wMCAtMC4xMiAgMC4zOSAgMC40OVxuIFs4XSAtMC41NyAtMC43OSAtMC40OSAgMi44NyAgMC40OVxuIn0= -->
+<pre><code> [1]  0.22  0.78 -0.44  0.00 -0.12  0.39  0.49
+ [8] -0.57 -0.79 -0.49  2.87  0.49</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>The outlier appears to be 2.87</p>
+<!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTGFiIDUiCmF1dGhvcnM6IEJyaSBDaXJpbGxvICYgUm9iIEdvbGViaWVza2kKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKKipRdWVzdGlvbiAwOioqCgpodHRwczovL2dpdGh1Yi5jb20vczExNzM2NTIvTGFiLTUKCioqUXVlc3Rpb24gMSoqCgpgYGB7cn0KeCA8LWMoMi4yLCA3LjgsIC00LjQsIDAuMCwgLTEuMiwgMy45LCA0LjksIC01LjcsIC03LjksIC00LjksIDI4LjcsIDQuOSkKI1RoaXMgaXMgc3RvcmluZyB0aGUgZGF0YSBpbiB4CgpxdWFudGlsZShzb3J0KHgpKQojIFRoaXMgaXMgZmluZGluZyB0aGUgcXVhcnRpbGVzIG9mIHRoZSBkYXRhIGFmdGVyIGl0CiMgaGFzIGJlZW4gc29ydGVkCgpJUVIueCA8LSBxdWFudGlsZSh4LCAwLjc1KSAtIHF1YW50aWxlKHgsIDAuMjUpCiMgVGhpcyBpcyBzYXZpbmcgdGhlIElRUiB0byBJUVIueAojIFRoaXMgaXMgc3VidHJhY3RpbmcgUTEgZnJvbSBRMyB0byBnZXQgdGhlIElRUgpgYGAKCioqUXVlc3Rpb24gMioqCgpgYGB7cn0KIycgUHJpbnQgdGhlIGZpcnN0IHF1YXJ0aWxlLCB0aGlyZCBxdWFydGlsZSwgYW5kIGludGVycXVhcnRpbGUgcmFuZ2Ugb2Ygc2FtcGxlIGRhdGEuCiMnCiMnIEBwYXJhbSBzYSBpcyBhIHZlY3RvciBjb250YWluaW5nIGEgc2FtcGxlCiMnCiMnIEByZXR1cm4gQSB2ZWN0b3Igb2YgdGhlIGZpcnN0IHF1YXJ0aWxlLCB0aGlyZCBxdWFydGlsZSwgYW5kIGludGVycXVhcnRpbGUgcmFuZ2UuIApxdWFydGlsZXMgPC0gZnVuY3Rpb24oc2EpewogIHF1YXJ0LmRhdGEgPC0gYyhxdWFudGlsZShzYSwgMC4yNSksIHF1YW50aWxlKHNhLCAwLjc1KSwgKHF1YW50aWxlKHNhLCAwLjc1KS1xdWFudGlsZShzYSwgMC4yNSkpKQogIHByaW50KHF1YXJ0LmRhdGEpCn0KCnF1YXJ0aWxlcyh4KQojIFRoaXMgaXMgdG8gdGVzdCBhbmQgbWFrZSBzdXJlIHRoYXQgdGhlIGZ1bmN0aW9uIGlzIHJ1bm5pbmcgcHJvcGVybHkuCmBgYAoKQXMgd2UgY2FuIHNlZSwgdGhlIHF1YXJ0aWxlcyBmdW5jdGlvbiBpcyB3b3JraW5nIHByb3Blcmx5IGJlY2F1c2UgdGhlIGZpcnN0cXVhcnRpbGUsIHRoaXJkIHF1YXJ0aWxlLCBhbmQgaW50ZXJxdWFydGlsZSByYW5nZSBtYXRjaCB3aXRoIHRoZSBvbmVzIGZvdW5kIGluIHF1ZXN0aW9uIDEuCgoqKlF1ZXN0aW9uIDMqKgoKYGBge3J9ClR1a2V5LmJlbG93IDwtIHF1YW50aWxlKHgsIDAuMjUpIC0gMS41ICogSVFSLngKVHVrZXkuYWJvdmUgPC0gcXVhbnRpbGUoeCwgMC43NSkgKyAxLjUgKiBJUVIueAojIFRoaXMgaXMgc3RvcmluZyB0aGUgbnVtYmVycyB0aGF0IGFueSBudW1iZXIgZnJvbSB0aGUgZGF0YSBtdXN0IGJlIAojIGFib3ZlIG9yIGJlbG93IGluIG9yZGVyIHRvIHF1YWxpZnkgYXMgYW4gb3V0bGllcgoKKHggPCBUdWtleS5iZWxvdykgPT0gVFJVRQooeCA+IFR1a2V5LmFib3ZlKSA9PSBUUlVFIAojIFRoaXMgaXMgY2hlY2tpbmcgdG8gc2VlIGlmIHRoZXJlIGFyZSBhbnkgbnVtYmVycyBpbiB0aGUgZGF0YSB0aGF0IG1lZXQgdGhpcyBjcml0ZXJpYQoKeFsoeCA+IFR1a2V5LmFib3ZlKSA9PSBUUlVFXQojIFRoaXMgaXMgcHJpbnRpbmcgdGhlIG51bWJlciB0aGF0IGlzIG1ha2lpbmcgdGhlIGJvb2xlYW4gdHJ1ZSAoYWthIHRoZSBvdXRsaWVyKQpgYGAKCkFjY29yZGluZyB0byBUdWtleSdzIHJ1bGUsIDI4LjcgaXMgY29uc2lkZXJlZCBhbiBvdXRsaWVyLgoKKipRdWVzdGlvbiA0KioKCmBgYHtyfQojJyBEZXRlcm1pbmUgd2hldGhlciB0aGVyZSBpcyBhbiBvdXRsaWVyIGluIGEgc2V0IG9mIGRhdGEuCiMnCiMnIEBwYXJhbSBzYSBpcyBhIHZlY3RvciBjb250YWluaW5nIGEgc2FtcGxlCiMnCiMnIEByZXR1cm4gQSBib29sZWFuIHZlY3RvciB0aGF0IHJldHVybnMgVFJVRSBmb3IgYW5kIG91dGxpZXIgYW5kIEZBTFNFIG90aGVyd2lzZS4KdHVrZXkub3V0bGllciA8LSBmdW5jdGlvbihzYSkgewogIHNhLnF1YXJ0IDwtIHF1YXJ0aWxlcyhzYSkKICAoKCh4IDwgc2EucXVhcnRbWzFdXS0xLjUqc2EucXVhcnRbWzNdXSkgPT0gVFJVRSkgfCAoKHggPiBzYS5xdWFydFtbMl1dKzEuNSpzYS5xdWFydFtbM11dKSkpCn0KCnR1a2V5Lm91dGxpZXIoeCkKYGBgCgpUaGlzIGlzIHRoZSBzYW1lIHJlc3VsdCB3ZSBnb3QgZm9yIHF1ZXN0aW9uIDMsIHRoZXJlZm9yZSB0aGUgZnVuY3Rpb24gaXMgd29ya2luZyBwcm9wZXJseS4KCioqUXVlc3Rpb24gNSoqCgpgYGB7cn0KIycgRGV0ZXJtaW5lIHdoZXRoZXIgYSBmdW5jdGlvbiBjb3JyZWN0bHkgY29tcHV0ZXMgd2hldGhlciBvciBub3QgdGhlcmUKIycgaXMgYW4gb3V0bGllciBpbiBhIHNldCBvZiBkYXRhLgojJwojJyBAcGFyYW0gZnVuIGlzIGEgZnVuY3Rpb24gdGhhdCB0ZXN0cyBmb3Igb3V0bGllcnMKIycKIycgQHJldHVybiBBIGJvb2xlYW4gdmVjdG9yIHRoYXQgcmV0dXJucyBUUlVFIGlmIHRoZSBmdW5jdGlvbiBjb3JyZWN0bHkgCiMnIGlkZW50aWZpZXMgdGhlIG91dGxpZXJzIGFuZCBGQUxTRSBvdGhlcndpc2UuCnRlc3QudHVrZXkub3V0bGllciA8LSBmdW5jdGlvbihmdW4gPSB0dWtleS5vdXRsaWVyKXsKICByZXN1bHRzIDwtIGMoRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIFRSVUUsIEZBTFNFKQogIAogIHggPC1jKDIuMiwgNy44LCAtNC40LCAwLjAsIC0xLjIsIDMuOSwgNC45LCAtNS43LCAtNy45LCAtNC45LCAyOC43LCA0LjkpCiAgCiAgaWYgKHN1bShmdW4oeCkgPT0gcmVzdWx0cykgPT0gMTIpewogICAgcmV0dXJuKFRSVUUpCiAgfWVsc2V7CiAgICByZXR1cm4oRkFMU0UpCiAgfQp9CiAgCnRlc3QudHVrZXkub3V0bGllcigpCmBgYAoKV2UgaGF2ZSB0ZXN0ZWQgdG8gc2VlIGlmIHRoZSBmdW5jdGlvbiB3ZSB3cm90ZSBwcmV2aW91c2x5IGlzIGNvcnJlY3RseSBpZGVudGlmeWluZyBvdXRsaWVycy4gCgoqKlF1ZXN0aW9uIDYqKgoKYGBge3J9CnF1YW50aWxlKHNvcnQoLXgpKQojIFRoaXMgaXMgZmluZGluZyB0aGUgcXVhcnRpbGVzIG9mIHRoZSBkYXRhIGFmdGVyIGl0CiMgaGFzIGJlZW4gc29ydGVkCgpJUVIueDEgPC0gcXVhbnRpbGUoLXgsIDAuNzUpIC0gcXVhbnRpbGUoLXgsIDAuMjUpCiMgVGhpcyBpcyBzYXZpbmcgdGhlIElRUiB0byBJUVIueAojIFRoaXMgaXMgc3VidHJhY3RpbmcgUTEgZnJvbSBRMyB0byBnZXQgdGhlIElRUgoKVHVrZXkuYmVsb3cgPC0gcXVhbnRpbGUoLXgsIDAuMjUpIC0gMS41ICogSVFSLngxClR1a2V5LmFib3ZlIDwtIHF1YW50aWxlKC14LCAwLjc1KSArIDEuNSAqIElRUi54MQojIFRoaXMgaXMgc3RvcmluZyB0aGUgbnVtYmVycyB0aGF0IGFueSBudW1iZXIgZnJvbSB0aGUgZGF0YSBtdXN0IGJlIAojIGFib3ZlIG9yIGJlbG93IGluIG9yZGVyIHRvIHF1YWxpZnkgYXMgYW4gb3V0bGllcgoKKC14IDwgVHVrZXkuYmVsb3cpID09IFRSVUUKKC14ID4gVHVrZXkuYWJvdmUpID09IFRSVUUgCiMgVGhpcyBpcyBjaGVja2luZyB0byBzZWUgaWYgdGhlcmUgYXJlIGFueSBudW1iZXJzIGluIHRoZSBkYXRhIHRoYXQgbWVldCB0aGlzIGNyaXRlcmlhCgoteFsoLXggPiBUdWtleS5hYm92ZSkgPT0gVFJVRV0KIyBUaGlzIGlzIHByaW50aW5nIHRoZSBudW1iZXIgdGhhdCBpcyBtYWtpaW5nIHRoZSBib29sZWFuIHRydWUgKGFrYSB0aGUgb3V0bGllcikKCi14IAojIFRoaXMgaXMganVzdCBwcmludGluZyBvdXQgd2hhdCAteCB3b3VsZCBsb29rIGxpa2UKCnR1a2V5Lm91dGxpZXIoLXgpCiMgVGhpcyBpcyBmaW5kaW5nIHRoZSBvdXRsaWVyIGluIHRoZSBzZXQgb2YgLXgKYGBgCgpUaGUgMTJ0aCB2YWx1ZSB3aGljaCBpcyAtMjguNyBzaG91bGQgYmUgYW4gb3V0bGllciBpbiB0aGUgZGF0YSBiZWNhdXNlIGl0IGlzIGZhciBiZWxvdyB3aGF0IFR1a2V5J3MgcnVsZSBpcy4gV2UgY2FuIHNlZSB0aGlzIGJ5IGRvaW5nIGl0IGJ5IGhhbmQgYW5kIGJ5IHVzaW5nIHRoZSBmdW5jdGlvbiB0dWtleS5vdXRsaWVyLgoKKipRdWVzdGlvbiA3KioKCmBgYHtyfQojJyBEZXRlcm1pbmUgd2hldGhlciBhIGZ1bmN0aW9uIGNvcnJlY3RseSBjb21wdXRlcyB3aGV0aGVyIG9yIG5vdCB0aGVyZQojJyBpcyBhbiBvdXRsaWVyIGluIGEgc2V0IG9mIGRhdGEuCiMnCiMnIEBwYXJhbSBmdW4gaXMgYSBmdW5jdGlvbiB0aGF0IHRlc3RzIGZvciBvdXRsaWVycwojJwojJyBAcmV0dXJuIEEgYm9vbGVhbiB2ZWN0b3IgdGhhdCByZXR1cm5zIFRSVUUgaWYgdGhlIGZ1bmN0aW9uIGNvcnJlY3RseSAKIycgaWRlbnRpZmllcyB0aGUgb3V0bGllcnMgYW5kIEZBTFNFIG90aGVyd2lzZS4KdGVzdC50dWtleS5vdXRsaWVyLjEgPC0gZnVuY3Rpb24oZnVuID0gdHVrZXkub3V0bGllcil7CiAgcmVzdWx0cyA8LSBjKEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBUUlVFLCBGQUxTRSkKICAKICB4IDwtYygyLjIsIDcuOCwgLTQuNCwgMC4wLCAtMS4yLCAzLjksIDQuOSwgLTUuNywgLTcuOSwgLTQuOSwgMjguNywgNC45KQogIAogIGlmIChzdW0oZnVuKC14KSA9PSByZXN1bHRzKSA9PSAxMil7CiAgICByZXR1cm4oVFJVRSkKICB9ZWxzZXsKICAgIHJldHVybihGQUxTRSkKICB9Cn0KCnRlc3QudHVrZXkub3V0bGllci4xKCkKYGBgCgpXZSBjYW4gc2VlIHRoYXQgdGhpcyBpcyBjb3JyZWN0IGJ5IHRoZSB3b3JrIHNob3duIGluIHRoZSBsYXN0IHF1ZXN0aW9uLgoKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTGFiIDUiCmF1dGhvcnM6IEJyaSBDaXJpbGxvICYgUm9iIEdvbGViaWVza2kKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKKipRdWVzdGlvbiAwOioqCgpodHRwczovL2dpdGh1Yi5jb20vczExNzM2NTIvTGFiLTUKCioqUXVlc3Rpb24gMSoqCgpgYGB7cn0KeCA8LWMoMi4yLCA3LjgsIC00LjQsIDAuMCwgLTEuMiwgMy45LCA0LjksIC01LjcsIC03LjksIC00LjksIDI4LjcsIDQuOSkKI1RoaXMgaXMgc3RvcmluZyB0aGUgZGF0YSBpbiB4CgpxdWFudGlsZShzb3J0KHgpKQojIFRoaXMgaXMgZmluZGluZyB0aGUgcXVhcnRpbGVzIG9mIHRoZSBkYXRhIGFmdGVyIGl0CiMgaGFzIGJlZW4gc29ydGVkCgpJUVIueCA8LSBxdWFudGlsZSh4LCAwLjc1KSAtIHF1YW50aWxlKHgsIDAuMjUpCiMgVGhpcyBpcyBzYXZpbmcgdGhlIElRUiB0byBJUVIueAojIFRoaXMgaXMgc3VidHJhY3RpbmcgUTEgZnJvbSBRMyB0byBnZXQgdGhlIElRUgpgYGAKCioqUXVlc3Rpb24gMioqCgpgYGB7cn0KIycgUHJpbnQgdGhlIGZpcnN0IHF1YXJ0aWxlLCB0aGlyZCBxdWFydGlsZSwgYW5kIGludGVycXVhcnRpbGUgcmFuZ2Ugb2Ygc2FtcGxlIGRhdGEuCiMnCiMnIEBwYXJhbSBzYSBpcyBhIHZlY3RvciBjb250YWluaW5nIGEgc2FtcGxlCiMnCiMnIEByZXR1cm4gQSB2ZWN0b3Igb2YgdGhlIGZpcnN0IHF1YXJ0aWxlLCB0aGlyZCBxdWFydGlsZSwgYW5kIGludGVycXVhcnRpbGUgcmFuZ2UuIApxdWFydGlsZXMgPC0gZnVuY3Rpb24oc2EpewogIHF1YXJ0LmRhdGEgPC0gYyhxdWFudGlsZShzYSwgMC4yNSksIHF1YW50aWxlKHNhLCAwLjc1KSwgKHF1YW50aWxlKHNhLCAwLjc1KS1xdWFudGlsZShzYSwgMC4yNSkpKQogIHByaW50KHF1YXJ0LmRhdGEpCn0KCnF1YXJ0aWxlcyh4KQojIFRoaXMgaXMgdG8gdGVzdCBhbmQgbWFrZSBzdXJlIHRoYXQgdGhlIGZ1bmN0aW9uIGlzIHJ1bm5pbmcgcHJvcGVybHkuCmBgYAoKQXMgd2UgY2FuIHNlZSwgdGhlIHF1YXJ0aWxlcyBmdW5jdGlvbiBpcyB3b3JraW5nIHByb3Blcmx5IGJlY2F1c2UgdGhlIGZpcnN0cXVhcnRpbGUsIHRoaXJkIHF1YXJ0aWxlLCBhbmQgaW50ZXJxdWFydGlsZSByYW5nZSBtYXRjaCB3aXRoIHRoZSBvbmVzIGZvdW5kIGluIHF1ZXN0aW9uIDEuCgoqKlF1ZXN0aW9uIDMqKgoKYGBge3J9ClR1a2V5LmJlbG93IDwtIHF1YW50aWxlKHgsIDAuMjUpIC0gMS41ICogSVFSLngKVHVrZXkuYWJvdmUgPC0gcXVhbnRpbGUoeCwgMC43NSkgKyAxLjUgKiBJUVIueAojIFRoaXMgaXMgc3RvcmluZyB0aGUgbnVtYmVycyB0aGF0IGFueSBudW1iZXIgZnJvbSB0aGUgZGF0YSBtdXN0IGJlIAojIGFib3ZlIG9yIGJlbG93IGluIG9yZGVyIHRvIHF1YWxpZnkgYXMgYW4gb3V0bGllcgoKKHggPCBUdWtleS5iZWxvdykgPT0gVFJVRQooeCA+IFR1a2V5LmFib3ZlKSA9PSBUUlVFIAojIFRoaXMgaXMgY2hlY2tpbmcgdG8gc2VlIGlmIHRoZXJlIGFyZSBhbnkgbnVtYmVycyBpbiB0aGUgZGF0YSB0aGF0IG1lZXQgdGhpcyBjcml0ZXJpYQoKeFsoeCA+IFR1a2V5LmFib3ZlKSA9PSBUUlVFXQojIFRoaXMgaXMgcHJpbnRpbmcgdGhlIG51bWJlciB0aGF0IGlzIG1ha2lpbmcgdGhlIGJvb2xlYW4gdHJ1ZSAoYWthIHRoZSBvdXRsaWVyKQpgYGAKCkFjY29yZGluZyB0byBUdWtleSdzIHJ1bGUsIDI4LjcgaXMgY29uc2lkZXJlZCBhbiBvdXRsaWVyLgoKKipRdWVzdGlvbiA0KioKCmBgYHtyfQojJyBEZXRlcm1pbmUgd2hldGhlciB0aGVyZSBpcyBhbiBvdXRsaWVyIGluIGEgc2V0IG9mIGRhdGEuCiMnCiMnIEBwYXJhbSBzYSBpcyBhIHZlY3RvciBjb250YWluaW5nIGEgc2FtcGxlCiMnCiMnIEByZXR1cm4gQSBib29sZWFuIHZlY3RvciB0aGF0IHJldHVybnMgVFJVRSBmb3IgYW5kIG91dGxpZXIgYW5kIEZBTFNFIG90aGVyd2lzZS4KdHVrZXkub3V0bGllciA8LSBmdW5jdGlvbihzYSkgewogIHNhLnF1YXJ0IDwtIHF1YXJ0aWxlcyhzYSkKICAoKCh4IDwgc2EucXVhcnRbWzFdXS0xLjUqc2EucXVhcnRbWzNdXSkgPT0gVFJVRSkgfCAoKHggPiBzYS5xdWFydFtbMl1dKzEuNSpzYS5xdWFydFtbM11dKSkpCn0KCnR1a2V5Lm91dGxpZXIoeCkKYGBgCgpUaGlzIGlzIHRoZSBzYW1lIHJlc3VsdCB3ZSBnb3QgZm9yIHF1ZXN0aW9uIDMsIHRoZXJlZm9yZSB0aGUgZnVuY3Rpb24gaXMgd29ya2luZyBwcm9wZXJseS4KCioqUXVlc3Rpb24gNSoqCgpgYGB7cn0KIycgRGV0ZXJtaW5lIHdoZXRoZXIgYSBmdW5jdGlvbiBjb3JyZWN0bHkgY29tcHV0ZXMgd2hldGhlciBvciBub3QgdGhlcmUKIycgaXMgYW4gb3V0bGllciBpbiBhIHNldCBvZiBkYXRhLgojJwojJyBAcGFyYW0gZnVuIGlzIGEgZnVuY3Rpb24gdGhhdCB0ZXN0cyBmb3Igb3V0bGllcnMKIycKIycgQHJldHVybiBBIGJvb2xlYW4gdmVjdG9yIHRoYXQgcmV0dXJucyBUUlVFIGlmIHRoZSBmdW5jdGlvbiBjb3JyZWN0bHkgCiMnIGlkZW50aWZpZXMgdGhlIG91dGxpZXJzIGFuZCBGQUxTRSBvdGhlcndpc2UuCnRlc3QudHVrZXkub3V0bGllciA8LSBmdW5jdGlvbihmdW4gPSB0dWtleS5vdXRsaWVyKXsKICByZXN1bHRzIDwtIGMoRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIFRSVUUsIEZBTFNFKQogIAogIHggPC1jKDIuMiwgNy44LCAtNC40LCAwLjAsIC0xLjIsIDMuOSwgNC45LCAtNS43LCAtNy45LCAtNC45LCAyOC43LCA0LjkpCiAgCiAgaWYgKHN1bShmdW4oeCkgPT0gcmVzdWx0cykgPT0gMTIpewogICAgcmV0dXJuKFRSVUUpCiAgfWVsc2V7CiAgICByZXR1cm4oRkFMU0UpCiAgfQp9CiAgCnRlc3QudHVrZXkub3V0bGllcigpCmBgYAoKV2UgaGF2ZSB0ZXN0ZWQgdG8gc2VlIGlmIHRoZSBmdW5jdGlvbiB3ZSB3cm90ZSBwcmV2aW91c2x5IGlzIGNvcnJlY3RseSBpZGVudGlmeWluZyBvdXRsaWVycy4gCgoqKlF1ZXN0aW9uIDYqKgoKYGBge3J9CnF1YW50aWxlKHNvcnQoLXgpKQojIFRoaXMgaXMgZmluZGluZyB0aGUgcXVhcnRpbGVzIG9mIHRoZSBkYXRhIGFmdGVyIGl0CiMgaGFzIGJlZW4gc29ydGVkCgpJUVIueDEgPC0gcXVhbnRpbGUoLXgsIDAuNzUpIC0gcXVhbnRpbGUoLXgsIDAuMjUpCiMgVGhpcyBpcyBzYXZpbmcgdGhlIElRUiB0byBJUVIueAojIFRoaXMgaXMgc3VidHJhY3RpbmcgUTEgZnJvbSBRMyB0byBnZXQgdGhlIElRUgoKVHVrZXkuYmVsb3cgPC0gcXVhbnRpbGUoLXgsIDAuMjUpIC0gMS41ICogSVFSLngxClR1a2V5LmFib3ZlIDwtIHF1YW50aWxlKC14LCAwLjc1KSArIDEuNSAqIElRUi54MQojIFRoaXMgaXMgc3RvcmluZyB0aGUgbnVtYmVycyB0aGF0IGFueSBudW1iZXIgZnJvbSB0aGUgZGF0YSBtdXN0IGJlIAojIGFib3ZlIG9yIGJlbG93IGluIG9yZGVyIHRvIHF1YWxpZnkgYXMgYW4gb3V0bGllcgoKKC14IDwgVHVrZXkuYmVsb3cpID09IFRSVUUKKC14ID4gVHVrZXkuYWJvdmUpID09IFRSVUUgCiMgVGhpcyBpcyBjaGVja2luZyB0byBzZWUgaWYgdGhlcmUgYXJlIGFueSBudW1iZXJzIGluIHRoZSBkYXRhIHRoYXQgbWVldCB0aGlzIGNyaXRlcmlhCgoteFsoLXggPiBUdWtleS5hYm92ZSkgPT0gVFJVRV0KIyBUaGlzIGlzIHByaW50aW5nIHRoZSBudW1iZXIgdGhhdCBpcyBtYWtpaW5nIHRoZSBib29sZWFuIHRydWUgKGFrYSB0aGUgb3V0bGllcikKCi14IAojIFRoaXMgaXMganVzdCBwcmludGluZyBvdXQgd2hhdCAteCB3b3VsZCBsb29rIGxpa2UKCnR1a2V5Lm91dGxpZXIoLXgpCiMgVGhpcyBpcyBmaW5kaW5nIHRoZSBvdXRsaWVyIGluIHRoZSBzZXQgb2YgLXgKYGBgCgpUaGUgMTJ0aCB2YWx1ZSB3aGljaCBpcyAtMjguNyBzaG91bGQgYmUgYW4gb3V0bGllciBpbiB0aGUgZGF0YSBiZWNhdXNlIGl0IGlzIGZhciBiZWxvdyB3aGF0IFR1a2V5J3MgcnVsZSBpcy4gV2UgY2FuIHNlZSB0aGlzIGJ5IGRvaW5nIGl0IGJ5IGhhbmQgYW5kIGJ5IHVzaW5nIHRoZSBmdW5jdGlvbiB0dWtleS5vdXRsaWVyLgoKKipRdWVzdGlvbiA3KioKCmBgYHtyfQojJyBEZXRlcm1pbmUgd2hldGhlciBhIGZ1bmN0aW9uIGNvcnJlY3RseSBjb21wdXRlcyB3aGV0aGVyIG9yIG5vdCB0aGVyZQojJyBpcyBhbiBvdXRsaWVyIGluIGEgc2V0IG9mIGRhdGEuCiMnCiMnIEBwYXJhbSBmdW4gaXMgYSBmdW5jdGlvbiB0aGF0IHRlc3RzIGZvciBvdXRsaWVycwojJwojJyBAcmV0dXJuIEEgYm9vbGVhbiB2ZWN0b3IgdGhhdCByZXR1cm5zIFRSVUUgaWYgdGhlIGZ1bmN0aW9uIGNvcnJlY3RseSAKIycgaWRlbnRpZmllcyB0aGUgb3V0bGllcnMgYW5kIEZBTFNFIG90aGVyd2lzZS4KdGVzdC50dWtleS5vdXRsaWVyLjEgPC0gZnVuY3Rpb24oZnVuID0gdHVrZXkub3V0bGllcil7CiAgcmVzdWx0cyA8LSBjKEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBUUlVFLCBGQUxTRSkKICAKICB4IDwtYygyLjIsIDcuOCwgLTQuNCwgMC4wLCAtMS4yLCAzLjksIDQuOSwgLTUuNywgLTcuOSwgLTQuOSwgMjguNywgNC45KQogIAogIGlmIChzdW0oZnVuKC14KSA9PSByZXN1bHRzKSA9PSAxMil7CiAgICByZXR1cm4oVFJVRSkKICB9ZWxzZXsKICAgIHJldHVybihGQUxTRSkKICB9Cn0KCnRlc3QudHVrZXkub3V0bGllci4xKCkKYGBgCgpXZSBjYW4gc2VlIHRoYXQgdGhpcyBpcyBjb3JyZWN0IGJ5IHRoZSB3b3JrIHNob3duIGluIHRoZSBsYXN0IHF1ZXN0aW9uLgoKIyBQcm9ibGVtIDgKCmBgYHtyfQp0ZXN0LnR1a2V5Lm91dGxpZXIuMShmdW49dHVrZXkub3V0bGllcikKYGBgCgojIFByb2JsZW0gOSAKCmBgYHtyfQowLjEqeApgYGAKClRoZSBvdXRsaWVyIGFwcGVhcnMgdG8gYmUgMi44Nw==</div>
 
 
 

@@ -164,4 +164,16 @@ test.tukey.outlier.1()
 
 We can see that this is correct by the work shown in the last question.
 
+# Problem 8
 
+```{r}
+test.tukey.outlier.1(fun=tukey.outlier)
+```
+
+# Problem 9 
+
+```{r}
+0.1*x
+```
+
+The outlier appears to be 2.87
