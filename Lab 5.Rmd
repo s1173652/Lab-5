@@ -177,3 +177,41 @@ test.tukey.outlier.1(fun=tukey.outlier)
 ```
 
 The outlier appears to be 2.87
+
+# Problem 10
+
+```{r}
+#' This function will make sure that the work in our previous functions accurately determined the outlier
+
+#' @param create a new modified function that will test for any outliers in the data set including 0.1*x
+
+#' @return this will return a vector with booleans that has three different elements
+
+test.turkey.outlier.2 <- function(fun=turkey.outlier){
+  results <- c(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE)
+   x <-c(2.2, 7.8, -4.4, 0.0, -1.2, 3.9, 4.9, -5.7, -7.9, -4.9, 28.7, 4.9)
+
+if(sum(fun(0.1*x)==results)==12){
+  return(TRUE)
+}
+   else{
+     return(FALSE)
+   }
+ }
+
+
+
+test.tukey.outlier()
+ 
+
+
+
+
+```
+# Problem 11
+
+```{r}
+test.turkey.outlier.2(fun=tukey.outlier)
+
+```
+
